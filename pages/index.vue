@@ -62,7 +62,7 @@
                     <h2 class=" text-center p">
                       Welcome to a world where we literally treat
                     </h2>
-                    <h1 class="text-center display-4">health as wealth.</h1>
+                    <h1 class="text-center display-4">HEALTH AS WEALTH.</h1>
 
                     <div class="card-content">
                       <div
