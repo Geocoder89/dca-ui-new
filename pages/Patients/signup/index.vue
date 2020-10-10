@@ -7,20 +7,21 @@
         <div class="content-header row"></div>
         <div class="content-body">
           <section>
-              <center>
-                      <img src="~assets/img/logo/drapp.png" class="mb-2 mt-1" width="250px" height="80px">
+              <center class="centre">
+              <img src="~assets/img/logo/drapp.png" class="mb-2 mt-1" width="250px" height="80px">
               </center>
           </section>
           <section class="row flexbox-container justify-content-center">
             <div class="col-xl-10 col-12 d-flex justify-content-center">
-              <div class="card bg-authentication rounded-0 mb-0">
+              <div class="card bg-authentication rounded-0">
                 <div class="row m-0">
                   <div
                     class="col-lg-5 d-lg-block d-none text-center align-self-center pl-0 pr-0 py-0"
                   >
                     <img
-                      src="~assets/img/pages/register.jpg"
+                      src="~assets/img/samples/doctor1.jpg"
                       alt="branding logo"
+                      class="logo"
                     />
                   </div>
                   <div class="col-lg-7 col-12 p-0">
@@ -36,9 +37,9 @@
                       <div class="card-content">
                         <div class="card-body pt-0">
                           <div class="col-12 pl-0">
-                            
+
                               <div class="row">
-                                <div class="col-xl-4 col-md-6 col-12 mb-0">
+                                <div class="col-xl-6 col-md-6 col-12 mb-0">
                                   <fieldset class="form-group">
                                     <label for="basicInput">First Name:</label>
                                     <input
@@ -55,7 +56,7 @@
                                     </div>
                                   </fieldset>
                                 </div>
-                                <div class="col-xl-4 col-md-6 col-12 mb-0">
+                                <div class="col-xl-6 col-md-6 col-12 mb-0">
                                   <fieldset class="form-group">
                                     <label for="basicInput">Last Name:</label>
                                     <input
@@ -72,7 +73,7 @@
                                     </div>
                                   </fieldset>
                                 </div>
-                                <div class="col-xl-4 col-md-6 col-12 mb-0">
+                                <div class="col-xl-6 col-md-6 col-12 mb-0">
                                   <fieldset class="form-group">
                                     <label for="basicInput">Email:</label>
                                     <input
@@ -89,7 +90,7 @@
                                     </div>
                                   </fieldset>
                                 </div>
-                                <div class="col-xl-4 col-md-6 col-12 mb-0">
+                                <div class="col-xl-6 col-md-6 col-12 mb-0">
                                   <fieldset class="form-group">
                                     <label for="basicInput">Phone:</label>
                                     <input
@@ -106,7 +107,7 @@
                                     </div>
                                   </fieldset>
                                 </div>
-                                <div class="col-xl-4 col-md-6 col-12 mb-0">
+                                <div class="col-xl-6 col-md-6 col-12 mb-0">
                                   <fieldset class="form-group">
                                     <label for="basicInput">Password:</label>
                                     <input
@@ -123,7 +124,7 @@
                                     </div>
                                   </fieldset>
                                 </div>
-                                <div class="col-xl-4 col-md-6 col-12 mb-0">
+                                <div class="col-xl-6 col-md-6 col-12 mb-0">
                                   <fieldset class="form-group">
                                     <label for="basicInput"
                                       >Password Confirmation:</label
@@ -199,12 +200,12 @@
                                       <li class="d-inline-block mr-2">
                                         <fieldset>
                                           <label>
-                                            <input 
-                                            type="radio" 
+                                            <input
+                                            type="radio"
                                             name="radio"
                                             v-model="form.gender"
                                             value="FEMALE"
-                                            
+
                                             />
                                             Female
                                           </label>
@@ -217,7 +218,8 @@
                                   </fieldset>
                                 </div> -->
                               </div>
-                              <div class="col-12 pl-0">
+                              <div class="row">
+                                 <div class="col-6">
                                 <p>
                                   Already have an account?
                                   <nuxt-link to="/auth/login">login</nuxt-link>
@@ -226,7 +228,17 @@
                                   Register</button
                                 >
                               </div>
-                            
+
+                               <div class="col-6">
+                                  <img class="stethoscope float-right" src="~assets/img/stethoscope.png"
+                                   alt="">
+                              </div>
+
+                              </div>
+
+
+
+
                           </div>
                         </div>
                       </div>
@@ -276,16 +288,29 @@ export default {
         ).then(response => {
             this.$router.push({
               path:'/auth/verify'
-            }) 
+            })
         })
         .catch(error => {
             console.log(error.response)
             this.disable = !this.disable
         })
-        
+
       console.log(this.form)
     }
   },
   middleware:['guest']
 }
 </script>
+
+
+<style lang="css" scoped>
+
+.stethoscope{
+  height: 60px;
+}
+
+.logo{
+  height: 450px;
+}
+</style>
+
